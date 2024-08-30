@@ -69,15 +69,11 @@ export default function Posts() {
     <div className="absolute bottom-0 left-0 z-[999] flex w-full flex-col">
       <div className="h-1/2 overflow-scroll p-5 px-5">
         <div className="rounded-xl bg-white p-5">
-          <div className="flex max-w-full">
-            <h1 className="mb-4 text-2xl font-bold">投稿</h1>
-            {complete ? (
-              <button className="ml-auto" onClick={closeModal}>
-                <XIcon />
-              </button>
-            ) : (
-              ''
-            )}
+          <div className="mb-5 flex max-w-full">
+            <h1 className="text-center text-2xl font-bold">投稿</h1>
+            <button className="ml-auto" onClick={closeModal}>
+              <XIcon />
+            </button>
           </div>
 
           {!complete ? (
