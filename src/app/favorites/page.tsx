@@ -38,37 +38,42 @@ export default function Favorites() {
   }
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center overflow-scroll">
-      <div className="flex h-full flex-col px-10 py-20">
-        <h1 className="mb-4 text-2xl font-semibold">いいねした投稿</h1>
-        <div className="flex flex-col space-y-4">
-          {favorites?.map((favorites: any) => (
-            <div
-              key={favorites.id}
-              className="flex flex-col rounded-lg border border-zinc-300 bg-white p-6"
-            >
-              <h1 className="mb-2 text-xl font-semibold">
-                {favorites.posts.name}
-              </h1>
-              <p className="mb-4 text-lg text-zinc-600">
-                {favorites.posts.animals}
-              </p>
-              <p className="mb-4 text-lg text-zinc-600">
-                {favorites.posts.created_at}
-              </p>
-              <p className="mb-4 text-lg text-zinc-600">
-                {favorites.posts.updated_at}
-              </p>
-              <button
-                className="rounded-lg border p-2"
-                onClick={() => removeFavoritePost(favorites.posts.id)}
+    <div className="flex flex-col h-screen bg-gray-100">
+      {/* Fixed Header */}
+      <header className="bg-white shadow-md py-4 px-6 fixed top-0 left-0 right-0 z-10">
+        <h1 className="text-2xl font-bold text-gray-900">いいねした投稿</h1>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-grow mt-16 p-6 overflow-auto">
+        <div className="max-w-3xl mx-auto">
+          <div className="space-y-6">
+            {favorites?.map((favorite: any) => (
+              <div
+                key={favorite.id}
+                className="bg-white shadow-md rounded-lg overflow-hidden transition-transform duration-300 hover:scale-102"
               >
-                いいねを解除する
-              </button>
-            </div>
-          ))}
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                    {favorite.posts.name}
+                  </h2>
+                  <p className="text-gray-600 mb-4">{favorite.posts.animals}</p>
+                  <div className="flex justify-between text-sm text-gray-500 mb-4">
+                    <span>作成日: {new Date(favorite.posts.created_at).toLocaleDateString()}</span>
+                    <span>更新日: {new Date(favorite.posts.updated_at).toLocaleDateString()}</span>
+                  </div>
+                  <button
+                    className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-300"
+                    onClick={() => removeFavoritePost(favorite.posts.id)}
+                  >
+                    いいねを解除する
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
