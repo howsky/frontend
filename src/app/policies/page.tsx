@@ -102,11 +102,7 @@ export default function TermsAndPrivacy() {
                 本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。
               </p>
               <p>
-                住所：教えなーい<br />
-                社名：ハスキー株式会社<br />
-                代表取締役：仲宗根幹太<br />
-                担当部署：柴犬<br />
-                Eメールアドレス：kanta@gmail.com
+                電話番号: 03-3581-4321
               </p>
             </div>
           </div>
