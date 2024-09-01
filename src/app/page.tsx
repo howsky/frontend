@@ -103,17 +103,21 @@ export default function Home() {
                       .format('YYYY-MM-DD HH:mm')}
                   </p>
                 </div>
-                {checkFavorite(post.id) ? (
-                  <HeartOff
-                    className="cursor-pointer text-red-500 hover:text-red-600"
-                    onClick={() => removeFavoritePost(post.id)}
-                  />
-                ) : (
-                  <Heart
-                    className="cursor-pointer text-blue-500 hover:text-blue-600"
-                    onClick={() => favoritePost(post.id)}
-                  />
-                )}
+                <div className="flex items-center space-x-2">
+                  {checkFavorite(post.id) ? (
+                    <Heart
+                      fill="currentColor"
+                      className="cursor-pointer text-red-500 hover:text-red-600"
+                      onClick={() => removeFavoritePost(post.id)}
+                    />
+                  ) : (
+                    <Heart
+                      className="cursor-pointer text-red-300 hover:text-red-400"
+                      onClick={() => favoritePost(post.id)}
+                    />
+                  )}
+                  <span className="text-sm text-red-600">{post.like}</span>
+                </div>
               </div>
             </div>
           ))}
