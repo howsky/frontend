@@ -46,6 +46,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
@@ -56,6 +57,9 @@
     "wrangler": "^3.81.0"
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["npm run format", "npm run lint"]
+    "*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint"
+    ]
   }
 }
