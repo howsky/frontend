@@ -11,7 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https:
 
 ### Prerequisites
 
-- Node.js (v22.8.x or higher)
+- Node.js (v22.10.x or higher)
 - npm (v8.0.x or higher)
 
 ### Install dependencies
