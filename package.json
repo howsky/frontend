@@ -30,7 +30,7 @@
     "@supabase/supabase-js": "^2.44.4",
     "dayjs": "^1.11.13",
     "leaflet": "^1.9.4",
-    "lucide-react": "^0.424.0",
+    "lucide-react": "^0.453.0",
     "next": "14.2.10",
     "react": "^18",
     "react-dom": "^18",
@@ -38,22 +38,22 @@
     "tailwind-variants": "^0.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.0",
+    "@biomejs/biome": "1.9.4",
     "@cloudflare/next-on-pages": "^1.12.1",
     "@cloudflare/workers-types": "^4.20240718.0",
     "@types/leaflet": "^1.9.12",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.19",
-    "husky": "^9.1.1",
-    "lint-staged": "^15.2.7",
+    "autoprefixer": "^10.4.20",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "postcss": "^8",
     "supabase": "^1.183.5",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^3.4.14",
     "typescript": "^5",
-    "vercel": "^35.1.0",
-    "wrangler": "^3.65.0"
+    "vercel": "^37.12.0",
+    "wrangler": "^3.81.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": ["npm run format", "npm run lint"]
