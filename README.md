@@ -1,70 +1,79 @@
-# howsky
+# Howsky
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https://developers.cloudflare.com/pages/get-started/c3).
 
+## Features
+
+- Applications created in TypeScript
+- Tailwind CSS
+
 ## Getting Started
+
+### Prerequisites
+
+- Node.js (v22.8.x or higher)
+- npm (v8.0.x or higher)
+
+### Install dependencies
+
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+### Development server
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Cloudflare integration
+## Configuration
 
-Besides the `dev` script mentioned above `c3` has added a few extra scripts that allow you to integrate the application with the [Cloudflare Pages](https://pages.cloudflare.com/) environment, these are:
-  - `pages:build` to build the application for Pages using the [`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages) CLI
-  - `preview` to locally preview your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
-  - `deploy` to deploy your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
+### Environment variables
 
-> __Note:__ while the `dev` script is optimal for local development you should preview your Pages application as well (periodically or before deployments) in order to make sure that it can properly work in the Pages environment (for more details see the [`@cloudflare/next-on-pages` recommended workflow](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md#recommended-workflow))
+Create a `.env.local` file in the root of the project and add the following environment variables:
 
-### Bindings
+```
+NEXT_PUBLIC_SUPABASE_URL="YOUR_SUPABASE_URL"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
+```
 
-Cloudflare [Bindings](https://developers.cloudflare.com/pages/functions/bindings/) are what allows you to interact with resources available in the Cloudflare Platform.
+## Scripts
 
-You can use bindings during development, when previewing locally your application and of course in the deployed application:
+- **Build**: To build the application
+    ```bash
+    npm run build
+    ```
 
-- To use bindings in dev mode you need to define them in the `next.config.js` file under `setupDevBindings`, this mode uses the `next-dev` `@cloudflare/next-on-pages` submodule. For more details see its [documentation](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md).
+- **Start**: To start the application
+    ```bash
+    npm start
+    ```
 
-- To use bindings in the preview mode you need to add them to the `pages:preview` script accordingly to the `wrangler pages dev` command. For more details see its [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev-1) or the [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+- **Lint**: To lint the application
+    ```bash
+    npm run lint
+    ```
 
-- To use bindings in the deployed application you will need to configure them in the Cloudflare [dashboard](https://dash.cloudflare.com/). For more details see the  [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+- **Format**: To format the application
+    ```bash
+    npm run format
+    ```
 
-#### KV Example
+## Auhor
 
-`c3` has added for you an example showing how you can use a KV binding.
+This team is made up entirely of members from the same high school
 
-In order to enable the example:
-- Search for javascript/typescript lines containing the following comment:
-  ```ts
-  // KV Example:
-  ```
-  and uncomment the commented lines below it.
-- Do the same in the `wrangler.toml` file, where
-  the comment is:
-  ```
-  # KV Example:
-  ```
-- If you're using TypeScript run the `cf-typegen` script to update the `env.d.ts` file:
-  ```bash
-  npm run cf-typegen
-  # or
-  yarn cf-typegen
-  # or
-  pnpm cf-typegen
-  # or
-  bun cf-typegen
-  ```
+- Minagishl ([@minagishl](https://github.com/minagishl))
+- maguroshouta ([@maguroshouta](https://github.com/maguroshouta))
+- maril ([@marukun712](https://github.com/marukun712))
+- kanta ([@kanta10250](https://github.com/kanta10250))
 
-After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
+## License
 
-Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
