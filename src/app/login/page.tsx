@@ -4,6 +4,16 @@ import { createClient } from '@/utils/supabase/client';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+const getURL = () => {
+  let url =
+    process?.env?.NEXT_PUBLIC_SITE_URL ??
+    process?.env?.NEXT_PUBLIC_VERCEL_URL ??
+    'http://localhost:3000/';
+  url = url.startsWith('http') ? url : `https://${url}`;
+  url = url.endsWith('/') ? url : `${url}/`;
+  return url;
+};
+
 export default function LoginPage() {
   const supabase = createClient();
   const router = useRouter();
@@ -32,6 +42,9 @@ export default function LoginPage() {
           onClick={() =>
             supabase.auth.signInWithOAuth({
               provider: 'google',
+              options: {
+                redirectTo: getURL(),
+              },
             })
           }
         >
