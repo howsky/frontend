@@ -5,7 +5,6 @@
   "editor.defaultFormatter": "biomejs.biome",
   "css.lint.unknownAtRules": "ignore",
   "files.exclude": {
-    "**/.next": true,
     "**/.vercel": true,
     "**/.wrangler": true
   }
