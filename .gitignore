@@ -1,3 +1,6 @@
+# Taken from the following template
+# https://github.com/github/gitignore/blob/main/Node.gitignore
+
 # Logs
 logs
 *.log
