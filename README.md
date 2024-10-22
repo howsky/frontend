@@ -69,7 +69,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY="YOUR_SUPABASE_ANON_KEY"
 
 This team is made up entirely of members from the same high school
 
-- Minagishl ([@minagishl](https://github.com/minagishl))
+- minagishl ([@minagishl](https://github.com/minagishl))
 - maguroshouta ([@maguroshouta](https://github.com/maguroshouta))
 - maril ([@marukun712](https://github.com/marukun712))
 - kanta ([@kanta10250](https://github.com/kanta10250))
