@@ -15,8 +15,6 @@ export default async function UserPage(props: {
     .eq('id', params.id)
     .single();
 
-  console.log(data);
-
   const avatarUrl = `https://ui-avatars.com/api/?name=${data?.username}`;
   const userName = data?.username;
   const description = data?.description;
