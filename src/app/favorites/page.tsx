@@ -81,7 +81,7 @@ export default function Favorites() {
                     投稿日:{' '}
                     {dayjs(favorite.posts.created_at)
                       .tz('Asia/Tokyo')
-                      .format('YYYY-MM-DD HH:mm')}
+                      .format('YYYY/MM/DD HH:mm')}
                   </p>
                 </div>
                 <button

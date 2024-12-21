@@ -117,7 +117,7 @@ export default function Home() {
                     投稿日:{' '}
                     {dayjs(post.created_at)
                       .tz('Asia/Tokyo')
-                      .format('YYYY-MM-DD HH:mm')}
+                      .format('YYYY/MM/DD HH:mm')}
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
