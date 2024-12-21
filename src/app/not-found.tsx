@@ -1,6 +1,6 @@
 export const runtime = 'edge';
 
-export default function NotFound(): JSX.Element {
+export default function NotFound(): React.ReactElement {
   return (
     <div className="absolute left-0 top-0 z-[9999] flex h-screen w-screen items-center justify-center bg-white">
       <div className="flex h-full w-full items-center justify-center">
