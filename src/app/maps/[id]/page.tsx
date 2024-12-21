@@ -3,7 +3,10 @@ export const runtime = 'edge';
 import PostDetails from '@/components/post/details';
 import { createClient } from '@/utils/supabase/server';
 
-export default async function GetPost({ params }: { params: { id: string } }) {
+export default async function GetPost(props: {
+  params: Promise<{ id: string }>;
+}) {
+  const params = await props.params;
   const supabase = createClient();
 
   const { data } = await supabase

@@ -3,7 +3,10 @@ export const runtime = 'edge';
 import { createClient } from '@/utils/supabase/server';
 import Image from 'next/image';
 
-export default async function UserPage({ params }: { params: { id: string } }) {
+export default async function UserPage(props: {
+  params: Promise<{ id: string }>;
+}) {
+  const params = await props.params;
   const supabase = createClient();
 
   const { data } = await supabase
