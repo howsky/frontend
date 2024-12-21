@@ -12,7 +12,7 @@ export default function Maps() {
 
   return (
     <div className="relative flex h-full flex-col bg-stone-200">
-      <DynamicMap />
+      <DynamicMap noFlyTo={buttonState} />
       {buttonState ? <Posts /> : null}
     </div>
   );

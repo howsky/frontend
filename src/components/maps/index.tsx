@@ -7,20 +7,31 @@ import { useMap } from 'react-leaflet';
 import MarkerEvent from './events/MarkerEvent';
 import MoveEvent from './events/MoveEvent';
 
-function FlyToLocation({ pinnedLocation }: { pinnedLocation?: string }) {
+function FlyToLocation({
+  pinnedLocation,
+  noFlyTo,
+}: { pinnedLocation?: string; noFlyTo?: boolean }) {
   const map = useMap();
 
   if (pinnedLocation) {
     const location = pinnedLocation.split(',');
 
     L.marker([Number(location[0]), Number(location[1])]).addTo(map);
-    map.flyTo([Number(location[0]), Number(location[1])]);
+
+    if (!noFlyTo) {
+      map.flyTo([Number(location[0]), Number(location[1])]);
+    } else {
+      map.setView([Number(location[0]), Number(location[1])]);
+    }
   }
 
   return null;
 }
 
-export default function CustomMap(props: { pinnedLocation?: string }) {
+export default function CustomMap(props: {
+  pinnedLocation?: string;
+  noFlyTo?: boolean;
+}) {
   return (
     <div className="flex h-full flex-col">
       <MapContainer
@@ -35,7 +46,10 @@ export default function CustomMap(props: { pinnedLocation?: string }) {
         <Navigation />
         <MarkerEvent />
         <MoveEvent />
-        <FlyToLocation pinnedLocation={props.pinnedLocation} />
+        <FlyToLocation
+          pinnedLocation={props.pinnedLocation}
+          noFlyTo={props.noFlyTo}
+        />
       </MapContainer>
     </div>
   );
