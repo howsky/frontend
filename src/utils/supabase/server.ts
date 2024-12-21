@@ -1,21 +1,20 @@
 import { createServerClient } from '@supabase/ssr';
-import { cookies, type UnsafeUnwrappedCookies } from 'next/headers';
+import { cookies } from 'next/headers';
 
-export function createClient() {
-  const cookieStore = cookies() as unknown as UnsafeUnwrappedCookies;
+export async function createClient() {
+  const cookieStore = await cookies();
 
-  if (
-    process.env.NEXT_PUBLIC_SUPABASE_URL === undefined &&
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY === undefined
-  ) {
-    throw new Error(
-      'NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY must be defined',
-    );
+  if (process.env.NEXT_PUBLIC_SUPABASE_URL === undefined) {
+    throw new Error('NEXT_PUBLIC_SUPABASE_URL is not defined');
+  }
+
+  if (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY === undefined) {
+    throw new Error('NEXT_PUBLIC_SUPABASE_ANON_KEY is not defined');
   }
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+    process.env.NEXT_PUBLIC_SUPABASE_URL ?? '',
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '',
     {
       cookies: {
         getAll() {
