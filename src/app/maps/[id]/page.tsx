@@ -9,7 +9,7 @@ export default async function GetPost(props: {
   const params = await props.params;
   const supabase = createClient();
 
-  const { data } = await supabase
+  const { data } = await (await supabase)
     .from('posts')
     .select('*')
     .eq('id', params.id)
