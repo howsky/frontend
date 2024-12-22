@@ -9,19 +9,12 @@ import { Heart, House, Map as MapIcon, Pen, User } from 'lucide-react';
 
 const list = [
   {
-    title: 'Map',
+    title: 'Map/Post',
     href: '/maps',
     icon: (state: string, pathname?: string) => (
       <MapIcon
         strokeWidth={state === 'false' && pathname === '/maps' ? 2.5 : 2}
       />
-    ),
-  },
-  {
-    title: 'Post',
-    href: '/posts',
-    icon: (state: string, _pathname?: string) => (
-      <Pen strokeWidth={state === 'true' ? 2.5 : 2} />
     ),
   },
   {
@@ -72,18 +65,11 @@ export default function Footer() {
     <footer className="flex max-h-fit justify-center bg-white px-5 text-center text-zinc-900 md:hidden">
       <div className="flex w-full max-w-md justify-between p-3">
         {list.map((item) =>
-          item.title === 'Post' || item.title === 'Map' ? (
+          item.title === 'Map/Post' ? (
             <button
               type="button"
               key={item.title}
-              onClick={
-                item.title === 'Map'
-                  ? () => {
-                      disabledButtonState();
-                      router.push('/maps');
-                    }
-                  : toggle
-              }
+              onClick={toggle}
               className="cursor-pointer rounded-full bg-white p-2 px-4"
             >
               {item.icon(buttonState ? 'true' : 'false', pathname)}
