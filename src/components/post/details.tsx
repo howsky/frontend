@@ -18,7 +18,7 @@ interface Post {
 export default function PostDetails(props: { post: Post }) {
   return (
     <div className="relative z-[9998] flex h-full flex-col bg-stone-200">
-      <DynamicMap pinnedLocation={props.post.location} />
+      <DynamicMap pinnedLocation={props.post.location} noFlyTo={true} />
       <div className="absolute bottom-0 left-0 z-[99999] flex w-full flex-col">
         <div className="h-1/2 overflow-scroll p-5 px-5">
           <div className="rounded-xl bg-white p-5">
