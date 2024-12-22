@@ -120,7 +120,7 @@ export default function Home() {
                       .format('YYYY/MM/DD HH:mm')}
                   </p>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className="block space-x-2 cursor-pointer z-10">
                   {checkFavorite(post.id) ? (
                     <Heart
                       fill="currentColor"
